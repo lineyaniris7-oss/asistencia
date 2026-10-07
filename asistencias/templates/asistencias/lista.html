@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Asistencias</title>
+</head>
+
+<body>
+
+<h1>Lista de asistencias</h1>
+
+<a href="/asistencias/">
+    Nueva asistencia
+</a>
+
+<hr>
+
+{% for asistencia in asistencias %}
+
+    <h3>{{ asistencia.nombres }}</h3>
+    
+
+    <a href="/asistencias/detalle/{{ asistencia.id }}/">
+        Ver
+    </a>
+
+    |
+
+    <a href="/asistencias/editar/{{ asistencia.id }}/">
+        Editar
+    </a>
+
+    |
+
+    <a href="/asistencias/eliminar/{{ asistencia.id }}/">
+        Eliminar
+    </a>
+
+    <hr>
+
+{% empty %}
+
+    <p>No hay asistencias.</p>
+
+{% endfor %}
+
+</body>
+
+</html>
